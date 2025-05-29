@@ -1,6 +1,6 @@
 {
     "name": "@andyrmitchell/securethis",
-    "version": "0.0.2",
+    "version": "0.0.3",
     "description": "Run static security scans on your project's code base.",
     "type": "module",
     "exports": {
