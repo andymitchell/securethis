@@ -16,7 +16,14 @@ import { getSecureThisConfig } from './configFile.ts';
 
 
 
-// Export main for testing purposes
+/**
+ * Run the security scan(s) over a code base.
+ * 
+ * It uses `securethis.config.ts` in your project root. (If it's not created yet, run this once and it'll build it).
+ * 
+ * @param options Set `cwd` to the root of your project (where package.json is)
+ * @returns 
+ */
 export async function securityScan(
     options?: Options
 ): Promise<Result> {
