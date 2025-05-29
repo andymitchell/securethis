@@ -7,12 +7,13 @@
 
 import { fileURLToPath } from "url";
 import { securityScan } from "./securityScan.ts";
+import { realpathSync } from "fs";
 import path from "path";
 import chalk from "chalk";
 
 // We need to compare their file paths.
-const currentScriptPath = fileURLToPath(import.meta.url);
-const executedScriptPath = path.resolve(process.argv[1]!); // Resolve to handle relative paths
+const currentScriptPath = realpathSync(fileURLToPath(import.meta.url));
+const executedScriptPath = realpathSync(path.resolve(process.argv[1]!));
 
 if (currentScriptPath === executedScriptPath) {
     securityScan().catch(error => {

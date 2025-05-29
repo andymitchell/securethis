@@ -7,6 +7,7 @@ import yaml from 'js-yaml';
 import type { FluidAttackResult, Options, SecureThisConfig } from '../types.ts';
 import { fileURLToPath } from 'node:url';
 import { BASE_FLUID_ATTACKS_FILE_NAME, FLUID_ATTACKS_OUTPUT_FILE_NAME } from '../consts.ts';
+import { findUp } from 'find-up';
 
 
 
@@ -18,10 +19,11 @@ const dirname = path.dirname(filename);
 export async function runFluidAttacks(projectRootDirAbsolute: string, outputDirAbsolute:string, secureThisConfig: SecureThisConfig, options?: Options): Promise<FluidAttackResult> {
     
     
+    const baseConfigYamlPathInCli = await findUp(BASE_FLUID_ATTACKS_FILE_NAME, {cwd: dirname});
 
-    const baseConfigYamlPathInCli = path.resolve(dirname, '../..', BASE_FLUID_ATTACKS_FILE_NAME);
-    if (!fs.existsSync(baseConfigYamlPathInCli)) {
-        console.error(chalk.red(`Error: Bundled base fluid-attacks-config.yaml not found.`));
+    //const baseConfigYamlPathInCli = path.resolve(dirname, '../..', BASE_FLUID_ATTACKS_FILE_NAME);
+    if (!baseConfigYamlPathInCli || !fs.existsSync(baseConfigYamlPathInCli)) {
+        console.error(chalk.red(`Error: Bundled base ${BASE_FLUID_ATTACKS_FILE_NAME} not found.`));
         console.error(chalk.red(`Expected at: ${baseConfigYamlPathInCli}`));
         process.exit(1);
     }

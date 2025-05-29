@@ -29,9 +29,10 @@ export async function createSecureThisConfigFile(projectRootDirAbsolute: string,
     const importPath = process.env.NODE_ENV? getRelativeImportPathToTypesForTesting(projectRootDirAbsolute, configFilePath) : await getSecureThisPackageName();
 
     const config: SecureThisConfig = {
-        outputDirRelative: 'security-scan-results',
+        outputDirRelative: 'securethis-results',
         sastExclude: [
             'glob(**/node_modules/**)',
+            'glob(**/securethis-results/**)',
             'bower_components',
             'vendor',
             'dist',
