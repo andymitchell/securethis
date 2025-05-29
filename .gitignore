@@ -4,3 +4,4 @@ node_modules/
 dist/
 .DS_Store
 securethis-results/
+tests/live/example-project/securethis.config.ts
