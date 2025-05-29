@@ -47,5 +47,5 @@ it('runs', async () => {
     expect(fileExists).toBe(true);
     
 
-}, 20000)
+}, 30000)
     

@@ -7,11 +7,9 @@ export const config: SecureThisConfig = {
     "outputDirRelative": "./securethis-results",
     "sastExclude": [
         "glob(**/node_modules/**)",
+        "**/dist/**",
+        "**/build/**",
         "glob(**/securethis-results/**)",
-        "bower_components",
-        "vendor",
-        "dist",
-        "build",
         "coverage",
         "glob(**/test*/**)",
         "glob(**/*spec*/**)",
