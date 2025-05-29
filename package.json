@@ -15,7 +15,8 @@
     "files": [
         "dist",
         "LICENSE",
-        "README.MD"
+        "README.MD",
+        "base-fluid-attacks-config.yaml"
     ],
     "publishConfig": {
         "access": "public"
