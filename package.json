@@ -50,7 +50,6 @@
         "bundle-require": "^5.1.0",
         "chalk": "^5.4.1",
         "find-up": "^7.0.0",
-        "inquirer": "^12.6.3",
         "js-yaml": "^4.1.0"
     }
 }
