@@ -1,0 +1,56 @@
+{
+    "name": "@andyrmitchell/securethis",
+    "version": "0.0.1",
+    "description": "Run static security scans on your project's code base.",
+    "type": "module",
+    "exports": {
+        ".": {
+            "types": "./dist/cli.d.ts",
+            "default": "./dist/cli.js"
+        }
+    },
+    "bin": {
+        "securethis": "./dist/cli.js"
+    },
+    "files": [
+        "dist",
+        "LICENSE",
+        "README.MD"
+    ],
+    "publishConfig": {
+        "access": "public"
+    },
+    "scripts": {
+        "build_release": "npm run build_prepare && np",
+        "build": "tsup",
+        "pkglint": "./build/publint_pipeable.sh",
+        "build_prepare": "npm run build && npm run pkglint",
+        "prepublishOnly": "npm run build_prepare",
+        "test": "vitest",
+        "test:watch": "vitest --watch"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/andymitchell/securethis.git"
+    },
+    "author": "",
+    "license": "MIT",
+    "engines": {
+        "node": ">=19.0.0"
+    },
+    "devDependencies": {
+        "@types/jest": "^29.5.14",
+        "@types/js-yaml": "^4.0.9",
+        "@types/node": "^22.15.18",
+        "tsup": "^8.4.0",
+        "typescript": "^5.8.3",
+        "vitest": "^3.1.4"
+    },
+    "dependencies": {
+        "bundle-require": "^5.1.0",
+        "chalk": "^5.4.1",
+        "find-up": "^7.0.0",
+        "inquirer": "^12.6.3",
+        "js-yaml": "^4.1.0"
+    }
+}

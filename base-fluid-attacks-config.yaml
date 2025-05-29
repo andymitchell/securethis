@@ -1,0 +1,19 @@
+namespace: Security_Scan
+working_dir: /scan-target
+output:
+  file_path: /scan-output/Fluid-Attacks-Results.csv
+  format: CSV
+language: EN
+apk:
+  include:
+    - glob(**/*.apk)
+sast:
+  include:
+    - .
+  exclude:
+    # Directories created by package managers, e.g., node_modules, vendor, dist.
+    - glob(**/node_modules/**)
+sca:
+  include:
+    - .
+tracing_opt_out: True
