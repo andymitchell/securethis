@@ -68,7 +68,7 @@ export async function createSecureThisConfigFile(projectRootDirAbsolute: string,
 /**
  * Retrieves the configuration from securethis.config.ts located in the project's root directory.
  * Uses bundle-require to load the TypeScript configuration file.
- * If the file doesn't exist, it offers to create a default one and exits.
+ * If the file doesn't exist, it creates a default one and exits.
  * @param projectRootDir The root directory of the target project.
  * @returns A Promise resolving to the loaded SecureThisConfig.
  */
