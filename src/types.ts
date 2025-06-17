@@ -1,3 +1,5 @@
+
+
 export type SecureThisConfig = {
     /**
     * Directory where scan results will be saved, relative to the project root.
@@ -12,6 +14,7 @@ export type SecureThisConfig = {
     */
     sastExclude: string[]; // Can contain plain paths or glob patterns
 };
+
 
 export type Options = {
     /** Set the cwd, to alter the start point for finding the nearest package.json ancestor */

@@ -1,9 +1,8 @@
-// Security Scan Configuration File (securethis.config.ts)
 // Please review and adjust these settings as needed for your project.
 
-import type {SecureThisConfig} from '../../../src/types.ts';
+import type {SecureThisConfig} from "../../../src/types.ts";
 
-export const config: SecureThisConfig = {
+export const config:SecureThisConfig = {
     "outputDirRelative": "./securethis-results",
     "sastExclude": [
         "glob(**/node_modules/**)",
@@ -22,4 +21,4 @@ export const config: SecureThisConfig = {
         "**/*.log",
         "temp/"
     ]
-}
+};

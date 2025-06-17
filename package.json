@@ -40,15 +40,19 @@
         "node": ">=19.0.0"
     },
     "devDependencies": {
+        "@andyrmitchell/utils": "^0.16.1",
+        "@types/fs-extra": "^11.0.4",
         "@types/jest": "^29.5.14",
         "@types/js-yaml": "^4.0.9",
         "@types/node": "^22.15.18",
+        "fs-extra": "^11.3.0",
         "tsup": "^8.4.0",
         "typescript": "^5.8.3",
-        "vitest": "^3.1.4"
+        "vitest": "^3.1.4",
+        "zod": "^3.25.67"
     },
     "dependencies": {
-        "bundle-require": "^5.1.0",
+        "@andyrmitchell/cli-config-file-ts": "^0.0.7",
         "chalk": "^5.4.1",
         "find-up": "^7.0.0",
         "js-yaml": "^4.1.0"
